@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Calculator - Go Green</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">🌍 Go Green</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="calculator.html" class="active">Calculator</a>
+      <a href="tips.html">Eco Tips</a>
+      <a href="trees.html">Trees</a>
+      <a href="info.html">Climate Info</a>
+      <a href="heat.html">Heat Safety</a>
+      <a href="challenge.html">Challenge</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="report.html">Report</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Carbon Footprint Calculator</h2>
+    <p>Enter your household's monthly numbers. All assumptions are shown below the result.</p>
+
+    <div class="calc-layout">
+
+      <!-- INPUT FORM -->
+      <div class="card">
+        <label for="people">People in your household</label>
+        <input type="number" id="people" min="1" value="4">
+
+        <label for="electricity">Electricity used per month (kWh)</label>
+        <input type="number" id="electricity" min="0" value="100">
+
+        <label for="petrol">Petrol used per month (litres)</label>
+        <input type="number" id="petrol" min="0" value="25">
+
+        <label for="water">Water used per day (litres, whole household)</label>
+        <input type="number" id="water" min="0" value="540">
+
+        <label for="waste">Waste thrown away per week (kg)</label>
+        <input type="number" id="waste" min="0" value="7">
+
+        <button class="btn" id="calcBtn">Calculate</button>
+      </div>
+
+      <!-- RESULT -->
+      <div class="card" id="resultBox" style="display:none;">
+        <h3>Your monthly footprint</h3>
+        <p class="big-number"><span id="totalValue">0</span> kg CO₂e</p>
+        <p id="perPerson"></p>
+
+        <h3>Where it comes from</h3>
+        <div id="breakdown"></div>
+
+        <h3>Compare (per person, per month)</h3>
+        <div id="comparison"></div>
+
+        <p id="impactMessage" class="impact"></p>
+
+        <button class="btn" id="saveBtn">Save to my dashboard</button>
+        <p id="saveMessage"></p>
+      </div>
+    </div>
+
+    <div class="assumptions">
+      <h3>Assumptions used</h3>
+      <ul>
+        <li>Electricity: 0.727 kg CO₂ per kWh (CEA India grid average, FY 2023–24)</li>
+        <li>Petrol: 2.2428 kg CO₂ per litre (EIA/EPA, combustion only)</li>
+        <li>Water: 0.0004 kg CO₂ per litre (approximate, for supply and treatment)</li>
+        <li>Waste: 0.5 kg CO₂e per kg (approximate, mixed waste)</li>
+        <li>Excludes flights, food and upstream emissions, so this is an estimate.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>The Earth is our only home. Let's protect it.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/calculator.js"></script>
+</body>
+</html>
