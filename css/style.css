@@ -1,0 +1,219 @@
+/* ---------- Colours and basic reset ---------- */
+:root {
+  --dark: #1a4d3a;
+  --green: #0b8a5a;
+  --light: #eefbf3;
+  --text: #2d3748;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nav-links a {
+  color: #d6f5e3;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
+  border-bottom: 2px solid #4ade80;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, #1a4d3a, #0b8a5a);
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.tag {
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  color: #a7f3d0;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+.hero-text {
+  max-width: 600px;
+  margin: 0 auto 28px;
+  font-size: 1.1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  background: #4ade80;
+  color: #14352a;
+  padding: 12px 26px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #4ade80;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background: #22c55e;
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- Sections and cards ---------- */
+.section {
+  padding: 60px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section.light {
+  background: var(--light);
+  max-width: none;
+}
+
+.section.light > * {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section h2 {
+  color: var(--dark);
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.center {
+  text-align: center;
+}
+
+.center p {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #b7ebcf;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.card h3 {
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.stat h3 {
+  color: var(--green);
+  font-size: 2rem;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--dark);
+  color: #d6f5e3;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer .small {
+  font-size: 0.8rem;
+  margin-top: 6px;
+  opacity: 0.8;
+}
+
+/* ---------- Mobile view ---------- */
+@media (max-width: 800px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+}
